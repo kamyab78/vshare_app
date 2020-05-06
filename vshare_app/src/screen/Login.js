@@ -1,5 +1,5 @@
 import React , {Component} from 'react';
-import{View ,StyleSheet,Dimensions , TextInput,Text} from 'react-native'
+import{View ,StyleSheet,Dimensions , TextInput,Text,TouchableOpacity} from 'react-native'
 var{height , width}=Dimensions.get('window');
 class login extends Component{
     render(){
@@ -13,6 +13,19 @@ class login extends Component{
                 <TextInput style={styles.inp} placeholder='password'
                 placeholderTextColor='white'
                 ></TextInput>
+                <View style={styles.viewforsignup}>
+<Text>you don't have accout?</Text>
+<TouchableOpacity 
+                                          onPress={() => this.props.navigation.navigate('Login')}
+                        >
+                            <Text >register</Text>
+                        </TouchableOpacity>
+                </View>
+                <TouchableOpacity 
+                                          onPress={() => this.props.navigation.navigate('Login')}
+                        >
+                            <Text >login</Text>
+                        </TouchableOpacity>
                 </View>
             </View>
         )
@@ -44,6 +57,9 @@ const styles = StyleSheet.create({
         backgroundColor:'#1F1B24',
         alignItems:'center',
         justifyContent:'center'
+    },
+    viewforsignup:{
+        flexDirection:'row'
     }
 
 })
