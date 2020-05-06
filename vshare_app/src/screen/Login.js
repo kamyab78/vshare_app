@@ -13,14 +13,18 @@ class login extends Component{
                 <TextInput style={styles.inp} placeholder='password'
                 placeholderTextColor='white'
                 ></TextInput>
+
+
                 <View style={styles.viewforsignup}>
-<Text>you don't have accout?</Text>
-<TouchableOpacity 
-                                          onPress={() => this.props.navigation.navigate('Login')}
+<Text style={styles.txtnotregister}>you don't have accout?</Text>
+<TouchableOpacity style={styles.btnsignup}
+                                          onPress={() => this.props.navigation.navigate('Signup')}
                         >
-                            <Text >register</Text>
+                            <Text style={styles.txtbtnregister}>register</Text>
                         </TouchableOpacity>
                 </View>
+
+
                 <TouchableOpacity 
                                           onPress={() => this.props.navigation.navigate('Login')}
                         >
@@ -49,18 +53,39 @@ const styles = StyleSheet.create({
     },
     Wel:{
         fontSize:40,
-        marginVertical:height*2/9
+        marginVertical:height*1/7
     },
     mainview:{
         flex:1,
-        marginBottom:height/2,
+        marginBottom:height/5,
         backgroundColor:'#1F1B24',
         alignItems:'center',
         justifyContent:'center'
     },
     viewforsignup:{
-        flexDirection:'row'
+        flexDirection:'row',
+        marginTop:5,
+        marginVertical:100,
+        width:width/2,
     }
+    ,
+    btnsignup:{
+        textAlign: 'center',
+        justifyContent: 'center',
+        marginLeft:10
+    },
+    txtbtnregister:{
+fontSize:15,
+color:'white'
+    },
+    txtnotregister:{
+fontSize:15,
+color:'white'
+    },
+    txtlogin:{
+
+    }
+
 
 })
 export default login;
