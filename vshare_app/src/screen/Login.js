@@ -1,7 +1,7 @@
 import React , {Component} from 'react';
 import{View ,StyleSheet,Dimensions} from 'react-native'
 var{height , width}=Dimensions.get('window');
-class loginSignup extends Component{
+class login extends Component{
     render(){
         return(
             <View style={styles.container}></View>
@@ -15,4 +15,4 @@ const styles = StyleSheet.create({
         backgroundColor:'#31100f'
     }
 })
-export default loginSignup;
+export default login;
