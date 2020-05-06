@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Landing from './src/screen/Landing';
+import Login from './src/screen/LoginSignup'
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
@@ -15,6 +16,12 @@ const Main = createStackNavigator(
                 headerShown: false
     },
         },
+        Login:{
+      screen:Login,
+            navigationOptions:{
+          headerShown:false
+            }
+        }
     }
 );
 const AppContainer = createAppContainer(Main);
