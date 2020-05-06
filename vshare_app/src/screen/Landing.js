@@ -22,7 +22,7 @@ class Landing extends Component {
                 <ImageBackground style={styles.backgroundPhoto} source={require('./photo/landing.jpg')}>
 
                     <View style={[styles.viewHead]}>
-
+<View style={styles.ViewName}>
                         <Text style={styles.textName}>
                             Vshare
                         </Text>
@@ -33,10 +33,8 @@ class Landing extends Component {
                         >
                             <Text style={styles.txtBtn}>login/signup</Text>
                         </TouchableOpacity>
-
                     </View>
-                    <View style={styles.viewExplain}>
-                        <Text style={styles.txtExplain}>
+               <Text style={styles.txtExplain}>
                             Vshare is a web-base service which allows you to watch a video file with other users
                             at the same time.
                             You can talk through the movie with each other
@@ -44,7 +42,10 @@ class Landing extends Component {
                         </Text>
 
 
-                    </View>
+
+
+
+</View>
                 </ImageBackground>
             </View>
         );
@@ -65,8 +66,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     ViewName: {
-        justifyContent: 'flex-start',
+     flexDirection:'row',
         marginLeft: 10,
+        marginTop: 30
     },
     textName: {
         fontSize: 21,
@@ -89,8 +91,8 @@ const styles = StyleSheet.create({
     viewHead: {
 
         width: '100%',
-        height: '10%',
-        flexDirection: 'row'
+        height: '100%',
+textAlign:'center',
     },
     txtBtn: {
         fontSize: 19,
@@ -98,15 +100,13 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         justifyContent: 'center',
     },
-    viewExplain: {
-        backgroundColor: '#ffffff',
-       width:10,
-        marginBottom:29
-
-
-    },
-    txtExplain: {fontSize:25,
-        textAlign:'center'
+    txtExplain: {fontSize:27,
+        textAlign:'center',
+       justifyContent: 'space-between',
+         color:'white',
+        marginTop:150,
+        marginLeft:width/6,
+width:width*2/3
     },
 });
 export default Landing;
