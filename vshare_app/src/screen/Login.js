@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     container:{
                flex:1,
         height:height,
-        backgroundColor:'#1F1B24',
+        backgroundColor:'#121212',
         alignItems:'center',
         justifyContent:'center'
     },
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     mainview:{
         flex:1,
         marginBottom:height/5,
-        backgroundColor:'#1F1B24',
+        backgroundColor:'#121212',
         alignItems:'center',
         justifyContent:'center'
     },
