@@ -11,19 +11,12 @@ class login extends Component{
                 <TextInput style={styles.inp} placeholder='enter username or email'
                 placeholderTextColor='white'
                 ></TextInput>
-                <TextInput style={styles.inp} placeholder='password'
+                <TextInput style={styles.inp1} placeholder='password'
                 placeholderTextColor='white'
                 ></TextInput>
 
 
-                <View style={styles.viewforsignup}>
-<Text style={styles.txtnotregister}>you don't have accout?</Text>
-<TouchableOpacity style={styles.btnsignup}
-                                          onPress={() => this.props.navigation.navigate('Signup')}
-                        >
-                            <Text style={styles.txtbtnregister}>register</Text>
-                        </TouchableOpacity>
-                </View>
+ 
 
 
                 <TouchableOpacity style={styles.btnlogin}
@@ -31,6 +24,14 @@ class login extends Component{
                         >
                             <Text style={styles.txtlogin}>login</Text>
                         </TouchableOpacity>
+                                       <View style={styles.viewforsignup}>
+<Text style={styles.txtnotregister}>you don't have accout?</Text>
+<TouchableOpacity style={styles.btnsignup}
+                                          onPress={() => this.props.navigation.navigate('Signup')}
+                        >
+                            <Text style={styles.txtbtnregister}>register</Text>
+                        </TouchableOpacity>
+                </View>
                 </View>
             </View>
         )
@@ -52,6 +53,14 @@ const styles = StyleSheet.create({
         fontSize:16,
         marginVertical:13
     },
+    inp1:{
+        backgroundColor:'rgba(255,255,255,0.2)',
+        width:width*2/3,
+        borderRadius:25,
+        paddingHorizontal:16,
+        fontSize:16,
+        marginVertical:13
+    },
     Wel:{
         fontSize:40,
         marginVertical:height*1/7,
@@ -59,14 +68,14 @@ const styles = StyleSheet.create({
     },
     mainview:{
         flex:1,
-        marginBottom:height/5,
+        marginBottom:height/60,
         backgroundColor:'#121212',
         alignItems:'center',
         justifyContent:'center'
     },
     viewforsignup:{
         flexDirection:'row',
-        marginTop:5,
+        marginTop:height*2/7,
         marginVertical:100,
         width:width/2,
     }
@@ -96,7 +105,11 @@ fontSize:20,
         borderWidth:1, width:120,
         height:50
         ,borderRadius:20,
-        justifyContent:'center'
+        justifyContent:'center',
+         marginVertical:40,
+         width:width*2/3,
+        borderRadius:25,
+        backgroundColor:'#1c313a'
     }
 
 
