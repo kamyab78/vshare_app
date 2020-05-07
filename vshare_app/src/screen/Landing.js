@@ -10,6 +10,7 @@ import {
     ImageBackground,
     Text,
     TouchableOpacity,
+    StatusBar
 } from 'react-native';
 import {withOrientation} from 'react-navigation';
 
@@ -19,6 +20,7 @@ class Landing extends Component {
     render() {
         return (
             <View style={styles.container}>
+               
                 <ImageBackground style={styles.backgroundPhoto} source={require('./photo/landing.jpg')}>
 
                     <View style={[styles.viewHead]}>
