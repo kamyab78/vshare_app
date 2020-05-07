@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
         height:height,
         backgroundColor:'#121212',
         alignItems:'center',
-        justifyContent:'center'
+        justifyContent:'center',
+       
     },
     inp:{
         backgroundColor:'rgba(255,255,255,0.2)',
@@ -51,7 +52,8 @@ const styles = StyleSheet.create({
         borderRadius:25,
         paddingHorizontal:16,
         fontSize:16,
-        marginVertical:13
+        marginVertical:13,
+        color:'white'
     },
     inp1:{
         backgroundColor:'rgba(255,255,255,0.2)',
@@ -59,7 +61,8 @@ const styles = StyleSheet.create({
         borderRadius:25,
         paddingHorizontal:16,
         fontSize:16,
-        marginVertical:13
+        marginVertical:13,
+        color:'white'
     },
     Wel:{
         fontSize:40,
