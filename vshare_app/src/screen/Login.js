@@ -1,10 +1,11 @@
 import React , {Component} from 'react';
-import{View ,StyleSheet,Dimensions , TextInput,Text,TouchableOpacity} from 'react-native'
+import{View ,StyleSheet,Dimensions , TextInput,Text,TouchableOpacity , StatusBar} from 'react-native'
 var{height , width}=Dimensions.get('window');
 class login extends Component{
     render(){
         return(
             <View style={styles.container}>
+            
                 <View style={styles.mainview}>
                 <Text style={styles.Wel}>Welcome to Vshare</Text>
                 <TextInput style={styles.inp} placeholder='enter username or email'
