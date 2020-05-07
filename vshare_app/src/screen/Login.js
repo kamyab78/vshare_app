@@ -25,10 +25,10 @@ class login extends Component{
                 </View>
 
 
-                <TouchableOpacity 
+                <TouchableOpacity style={styles.btnlogin}
                                           onPress={() => this.props.navigation.navigate('Login')}
                         >
-                            <Text >login</Text>
+                            <Text style={styles.txtlogin}>login</Text>
                         </TouchableOpacity>
                 </View>
             </View>
@@ -53,7 +53,8 @@ const styles = StyleSheet.create({
     },
     Wel:{
         fontSize:40,
-        marginVertical:height*1/7
+        marginVertical:height*1/7,
+        color:'white'
     },
     mainview:{
         flex:1,
@@ -83,7 +84,18 @@ fontSize:15,
 color:'white'
     },
     txtlogin:{
+        textAlign:"center",
+        color:'white',
+fontSize:20,
+ justifyContent: 'center',
 
+    },
+    btnlogin:{
+        borderColor:'white',
+        borderWidth:1, width:120,
+        height:50
+        ,borderRadius:20,
+        justifyContent:'center'
     }
 
 
