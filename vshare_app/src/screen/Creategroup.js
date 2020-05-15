@@ -19,13 +19,14 @@ render() {
     <ProgressSteps>
         <ProgressStep label="create group" nextBtnTextStyle={buttonTextStyle}>
             <View style={{ alignItems: 'center' }}>
-                 <TextInput style={styles.inp1} placeholder='password'
+                <Text style={styles.txtacc}>Create tour account</Text>
+                 <TextInput style={styles.inp1} placeholder='name'
                 placeholderTextColor='white'
                 ></TextInput>
-                  <TextInput style={styles.inp1} placeholder='password'
+                  <TextInput style={styles.inp1} placeholder='id'
                 placeholderTextColor='white'
                 ></TextInput>
-                  <TextInput style={styles.inp1} placeholder='password'
+                  <TextInput style={styles.inp1} placeholder='bio'
                 placeholderTextColor='white'
                 ></TextInput>
             </View>
@@ -61,6 +62,12 @@ const styles = StyleSheet.create({
         fontSize:16,
         marginVertical:13,
         color:'white'
+    },
+    txtacc:{
+        color:'white',
+        fontSize:30,
+        textAlign:"center",
+        marginVertical:40
     }
   
 
