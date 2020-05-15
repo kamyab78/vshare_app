@@ -4,7 +4,8 @@ import { ProgressSteps, ProgressStep } from 'react-native-progress-steps';;
 var{height , width}=Dimensions.get('window');
 
 const buttonTextStyle = {
-    color: 'red'
+    color: 'red',
+    
 };
 const prev={
     color:'#121212'
@@ -17,9 +18,9 @@ render() {
   <View style={styles.container}>
   <View style={{flex: 1}}>
     <ProgressSteps>
-        <ProgressStep label="create group" nextBtnTextStyle={buttonTextStyle}>
+        <ProgressStep label="create group" nextBtnTextStyle={styles.btnnext}>
             <View style={{ alignItems: 'center' }}>
-                <Text style={styles.txtacc}>Create tour account</Text>
+                <Text style={styles.txtacc}>Create tour group</Text>
                  <TextInput style={styles.inp1} placeholder='name'
                 placeholderTextColor='white'
                 ></TextInput>
@@ -31,9 +32,19 @@ render() {
                 ></TextInput>
             </View>
         </ProgressStep>
-        <ProgressStep label="add member" nextBtnTextStyle={buttonTextStyle} previousBtnTextStyle={prev}>
+        <ProgressStep label="add member" nextBtnTextStyle={styles.btnnext} previousBtnTextStyle={prev}>
             <View style={{ alignItems: 'center' }}>
-                <Text>This is the content within step 2!</Text>
+                <Text style={styles.txtacc}>Add your member</Text>
+                <View style={styles.viewadd}>
+                   <TextInput style={styles.inp1} placeholder='id of member'
+                placeholderTextColor='white'
+                ></TextInput>
+                   <TouchableOpacity style={styles.btnadd}
+                                          onPress={() => this.props.navigation.navigate('Login')}
+                        >
+                            <Text style={styles.txtadd}>Add</Text>
+                        </TouchableOpacity>
+                        </View>
             </View>
         </ProgressStep>
       
@@ -68,6 +79,32 @@ const styles = StyleSheet.create({
         fontSize:30,
         textAlign:"center",
         marginVertical:40
+    },
+    btnnext:{
+        color:'red',
+        marginRight:50
+    },
+    btnadd:{
+ textAlign: 'center',
+        justifyContent: 'center',
+      width:50,
+        height: 47,
+        borderColor: 'white',
+      
+        fontSize:16,
+        marginVertical:13,
+
+    
+    },
+    txtadd:{
+               fontSize:15,
+color:'white',
+textAlign:"center"
+    },
+    viewadd:{
+        flexDirection:'row',
+         justifyContent: 'center',
+        
     }
   
 
