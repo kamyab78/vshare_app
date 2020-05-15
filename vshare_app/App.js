@@ -3,6 +3,7 @@ import Landing from './src/screen/Landing';
 import Login from './src/screen/Login'
 import Signup from'./src/screen/Signup'
 import Homepage from'./src/screen/Homepage'
+import Create from './src/screen/Creategroup'
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
@@ -32,6 +33,12 @@ const Main = createStackNavigator(
         },
         Homepage:{
             screen:Homepage,
+            navigationOptions:{
+                headerShown:false
+            }
+        },
+            Create:{
+            screen:Create,
             navigationOptions:{
                 headerShown:false
             }

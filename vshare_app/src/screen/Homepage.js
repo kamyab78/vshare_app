@@ -22,7 +22,7 @@ class login extends Component{
                 <View style={styles.viewgroup}>
 <Text style={styles.txtyourgp}>your group</Text>
      <TouchableOpacity style={styles.touchcreate}
-                                          onPress={() => this.props.navigation.navigate('Homepage')}
+                                          onPress={() => this.props.navigation.navigate('Create')}
                         >
                             <Text style={styles.txttouch}>create new group</Text>
                         </TouchableOpacity>
