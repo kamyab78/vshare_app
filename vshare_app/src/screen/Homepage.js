@@ -54,12 +54,12 @@ height:height*5/6,
 
    },
    viewgroup:{
-width:width*5/6,
-height:height*5/6,
+width:width*11/12,
+height:height*4/5,
 backgroundColor:'black',
 position:"absolute",
-marginLeft:width/12,
-marginTop:40,
+marginLeft:width/24,
+marginTop:20,
    },
    touchuser:{
     textAlign: 'center',
@@ -102,7 +102,7 @@ textAlign:"center"
    touchcreate:{
  textAlign: 'center',
         justifyContent: 'center',
-        marginLeft: width*5 /11,
+        marginLeft: width*6 /11,
         height: 40,
         borderColor: 'white',
         width: 140,
