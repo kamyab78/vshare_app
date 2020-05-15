@@ -32,7 +32,8 @@ render() {
                 ></TextInput>
             </View>
         </ProgressStep>
-        <ProgressStep label="add member" nextBtnTextStyle={styles.btnnext} previousBtnTextStyle={prev}>
+        <ProgressStep label="add member" nextBtnTextStyle={styles.btnnext} previousBtnTextStyle={prev}
+        onSubmit={() => this.props.navigation.navigate('Homepage')}>
             <View style={{ alignItems: 'center' }}>
                 <Text style={styles.txtacc}>Add your member</Text>
                 <View style={styles.viewadd}>
