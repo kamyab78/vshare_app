@@ -1,10 +1,11 @@
 import React , {Component} from 'react';
 import{View ,StyleSheet,Dimensions , TextInput,Text,TouchableOpacity , StatusBar , Button } from 'react-native'
-//import AsyncStorage from '@react-native-community/async-storage'
+import AsyncStorage from '@react-native-community/async-storage'
 var{height , width}=Dimensions.get('window');
 class login extends Component{
     componentDidMount(){
        // console.log( "token "+AsyncStorage.getItem('token'))
+       console.log(AsyncStorage.getItem('token'))
     }
     render(){
         return(

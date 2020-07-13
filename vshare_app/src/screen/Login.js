@@ -1,6 +1,6 @@
 import React , {Component} from 'react';
 import{View ,StyleSheet,Dimensions , TextInput,Text,TouchableOpacity , StatusBar } from 'react-native'
-//import AsyncStorage from '@react-native-community/async-storage'
+import AsyncStorage from '@react-native-community/async-storage'
 import Toast from 'react-native-simple-toast'
 var{height , width}=Dimensions.get('window');
 class login extends Component{
@@ -36,6 +36,8 @@ console.log(coll)
       .then((response) => {
       if(response.token!=null){
           console.log("ok")
+          AsyncStorage.setItem('token' , response.token)
+         console.log(AsyncStorage.getItem('token'))
        //   AsyncStorage.setItem('token',response.token);
           this.props.navigation.navigate('Homepage')
       }

@@ -1,30 +1,81 @@
 import React , {Component} from 'react';
 import{View ,StyleSheet,Dimensions , TextInput,Text,TouchableOpacity} from 'react-native'
+import Toast from 'react-native-simple-toast'
 var{height , width}=Dimensions.get('window');
 class signup extends Component{
+    constructor (props) {
+        super(props)
+        this.state = {
+          user: null,
+          pass:null,
+          fname:null,
+          lname:null,
+          email:null,
+
+        }
+    
+        this.signup = this.signup.bind(this)
+      }
+      signup(){
+        let coll={}
+      
+        coll.username=this.state.user
+        coll.password=this.state.pass
+        coll.email=this.state.email
+        coll.firstname=this.state.fname
+        coll.lastname=this.state.lname
+        coll.password2=this.state.pass
+
+       
+        console.log(coll)
+       fetch("http://185.206.92.246:8000/user/signup/", {
+        method: 'POST',
+        body: JSON.stringify(coll),
+        headers: new Headers({
+            "accept": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+            "Content-Type": "application/json"
+        })
+      }).then(res => res.json())
+      .catch(error=> console.error('Error:', error))
+      .then((response) => {
+         
+          if(response.email==coll.email){
+         
+              this.props.navigation.navigate('Login')
+          }
+          else{
+             
+              Toast.showWithGravity(" incorect format", Toast.LONG, Toast.CENTER);
+          }
+  
+    }
+      );
+      }
     render(){
         return(
             <View style={styles.container}>
                 <View style={styles.mainview}>
                            <Text style={styles.txtCreate}>Create your account</Text>
-                <TextInput style={styles.inp} placeholder='enter your firstname'
+                <TextInput onChangeText={(text1) => this.setState({fname: text1})} style={styles.inp} placeholder='enter your firstname'
                 placeholderTextColor='white'
                 ></TextInput>
-                    <TextInput style={styles.inp} placeholder='enter your lastname'
+                    <TextInput onChangeText={(text2) => this.setState({lname: text2})} style={styles.inp} placeholder='enter your lastname'
                 placeholderTextColor='white'
                 ></TextInput>
-                    <TextInput style={styles.inp} placeholder='enter your username'
+                    <TextInput onChangeText={(text3) => this.setState({user: text3})} style={styles.inp} placeholder='enter your username'
                 placeholderTextColor='white'
                 ></TextInput>
-                    <TextInput style={styles.inp} placeholder='enter your email'
+                    <TextInput onChangeText={(text4) => this.setState({email: text4})} style={styles.inp} placeholder='enter your email'
                 placeholderTextColor='white'
                 ></TextInput>
-                    <TextInput style={styles.inp} placeholder='enter your password'
+                    <TextInput onChangeText={(text5) => this.setState({pass: text5})} style={styles.inp} placeholder='enter your password'
                 placeholderTextColor='white'
                 ></TextInput>
            
                 <TouchableOpacity style={styles.btnlogin}
-                                          onPress={() => this.props.navigation.navigate('Login')}
+                                          onPress={this.signup}
                         >
                             <Text style={styles.txtlogin}>signup</Text>
                         </TouchableOpacity>
