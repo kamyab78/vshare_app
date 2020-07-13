@@ -1,7 +1,11 @@
 import React , {Component} from 'react';
 import{View ,StyleSheet,Dimensions , TextInput,Text,TouchableOpacity , StatusBar , Button } from 'react-native'
+//import AsyncStorage from '@react-native-community/async-storage'
 var{height , width}=Dimensions.get('window');
 class login extends Component{
+    componentDidMount(){
+       // console.log( "token "+AsyncStorage.getItem('token'))
+    }
     render(){
         return(
             <View style={styles.container}>
@@ -15,7 +19,9 @@ class login extends Component{
                              <TouchableOpacity style={styles.touchsearch}
                                           onPress={() => this.props.navigation.navigate('Homepage')}
                         >
-                            <Text style={styles.txttouch}>search</Text>
+                            <Text style={styles.txttouch}
+                            onPress={() => this.props.navigation.navigate('Chat')}
+                            >search</Text>
                         </TouchableOpacity>
             </View>
             <View style={styles.viewbody}>
@@ -54,11 +60,11 @@ height:height*5/6,
 
    },
    viewgroup:{
-width:width*11/12,
-height:height*4/5,
+width:width,
+height:height*5/6,
 backgroundColor:'black',
 position:"absolute",
-marginLeft:width/24,
+
 marginTop:20,
    },
    touchuser:{
@@ -102,7 +108,7 @@ textAlign:"center"
    touchcreate:{
  textAlign: 'center',
         justifyContent: 'center',
-        marginLeft: width*6 /11,
+        marginLeft: width*7 /11,
         height: 40,
         borderColor: 'white',
         width: 140,

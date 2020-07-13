@@ -4,6 +4,7 @@ import Login from './src/screen/Login'
 import Signup from'./src/screen/Signup'
 import Homepage from'./src/screen/Homepage'
 import Create from './src/screen/Creategroup'
+import Chat from './src/screen/Chatroom'
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
@@ -42,7 +43,13 @@ const Main = createStackNavigator(
             navigationOptions:{
                 headerShown:false
             }
-        }
+        },
+Chat:{
+    screen:Chat,
+    navigationOptions:{
+        headerShown:false
+    }
+}
     }
 );
 const AppContainer = createAppContainer(Main);

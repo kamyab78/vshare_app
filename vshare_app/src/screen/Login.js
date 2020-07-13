@@ -1,17 +1,61 @@
 import React , {Component} from 'react';
-import{View ,StyleSheet,Dimensions , TextInput,Text,TouchableOpacity , StatusBar} from 'react-native'
+import{View ,StyleSheet,Dimensions , TextInput,Text,TouchableOpacity , StatusBar } from 'react-native'
+//import AsyncStorage from '@react-native-community/async-storage'
+import Toast from 'react-native-simple-toast'
 var{height , width}=Dimensions.get('window');
 class login extends Component{
+
+    constructor (props) {
+        super(props)
+        this.state = {
+          user: null,
+          pass:null,
+        }
+    
+        this.login = this.login.bind(this)
+      }
+  
+   login(){
+       console.log("username "+this.state.user)
+       console.log("pass "+this.state.pass)
+       let coll={}
+coll.username=this.state.user
+coll.password=this.state.pass
+console.log(coll)
+       fetch("http://185.206.92.246:8000/user/login/", {
+        method: 'POST',
+        body: JSON.stringify(coll),
+        headers: new Headers({
+            "accept": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+            "Content-Type": "application/json"
+        })
+      }).then(res => res.json())
+      .catch(error=> console.error('Error:', error))
+      .then((response) => {
+      if(response.token!=null){
+          console.log("ok")
+       //   AsyncStorage.setItem('token',response.token);
+          this.props.navigation.navigate('Homepage')
+      }
+      else{
+          Toast.showWithGravity("username or email incorect", Toast.LONG, Toast.CENTER);
+      }
+    }
+      );
+
+   }
     render(){
         return(
             <View style={styles.container}>
             
                 <View style={styles.mainview}>
                 <Text style={styles.Wel}>Welcome to Vshare</Text>
-                <TextInput style={styles.inp} placeholder='enter username or email'
+                <TextInput onChangeText={(text1) => this.setState({user: text1})} style={styles.inp} placeholder='enter username or email'
                 placeholderTextColor='white'
                 ></TextInput>
-                <TextInput style={styles.inp1} placeholder='password'
+                <TextInput onChangeText={(text) => this.setState({pass: text})} style={styles.inp1} placeholder='password'
                 placeholderTextColor='white'
                 ></TextInput>
 
@@ -20,7 +64,7 @@ class login extends Component{
 
 
                 <TouchableOpacity style={styles.btnlogin}
-                                          onPress={() => this.props.navigation.navigate('Homepage')}
+                                          onPress={this.login}
                         >
                             <Text style={styles.txtlogin}>login</Text>
                         </TouchableOpacity>
